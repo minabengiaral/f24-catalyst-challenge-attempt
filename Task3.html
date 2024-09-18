@@ -59,10 +59,11 @@
             
             // BE ABLE TO EXPLAIN what document.getByElementID() does in this context
             const todoInput = document.getElementById('todo-input');
-            const createdTodo = todoInput.value.trim();
+            const createdTodo = todoInput.value.trim(); // trim makes sure there are no leading or trailing spaces
             
             // Add non-empty string todos to the todo list
-            // YOUR CODE HERE 
+            // YOUR CODE HERE
+            addTodo(createdTodo);
 
             // reset the input value after add todo is clicked.
             todoInput.value = '';
@@ -90,11 +91,15 @@
 
         function deleteTodo(index) {
             // YOUR CODE HERE (recycle your work from former tasks)
+            todoList.splice(index, 1);
+            
             refreshTodoList()
         }
 
         function addTodo(todo) {
             // YOUR CODE HERE (recycle your work from former tasks)
+            todoList.push(todo);
+
             refreshTodoList()
         }
     </script>
